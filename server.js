@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 
 app.get('/:so_a/:pheptinh/:so_b',(req,res)=>{
-    const {so_a , pheptinh, so_b} = req.params
+    const { so_a , pheptinh, so_b} = req.params
     const t = new Tinh(so_a,so_b,pheptinh)
     const result = t.getResult()
     res.send({
