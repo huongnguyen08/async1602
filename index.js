@@ -8,6 +8,7 @@ function getBalance(address,fn){
         return fn(result.data.confirmed_balance,null)
     })
 }
+
 getBalance('1NTxf1H9PoWCUWnKcdfLtFtgGWxRmWWq83',(result,error)=>{
     if(error) return console.log(error)
     console.log(result)
@@ -20,7 +21,7 @@ getBalance('1NTxf1H9PoWCUWnKcdfLtFtgGWxRmWWq83',(result,error)=>{
 //     return 3
 // }
 /**
- * 
+ * 1NTxf1H9PoWCUWnKcdfLtFtgGWxRmWWq83
  * 19Li3BpAigvtv2Z9ce4B5WwjXixfwqkgVy
  * 18cBEMRxXHqzWWCxZNtU91F5sbUNKhL5PX
  * 1CK6KHY6MHgYvmRQ4PAafKYDrg1ejbH1cE
