@@ -35,50 +35,12 @@ function chia(a,b){
         })
     })
 }
-// (2+4)*5/2
-// cong(2,4)
-// .then(tong => {
-//     nhan(tong,5)
-//     .then(tich=>{
-//         chia(tich,2)
-//         .then(result=>console.log(result))
-//         .catch(err=>console.log(err))
-//     })
-//     .catch(err=>console.log(err))
-// })
-// .catch(err=>console.log(err))
-
-// cong(2,4)
-// .then(tong => nhan(tong,5))
-// .then(tich=>chia(tich,2))
-// .then(r => console.log(r))
-// .catch(err=>console.log(err.message))
-
-function tinhDienTich(a,b,h,cb){
-    cong(a,b)
-    .then(tong => nhan(tong,h))
-    .then(tich=>chia(tich,2))
-    .then(result => cb(result,null))
-    .catch(err=>cb(null,err.message))
+// (2+4)*5/2 = 6*5/2 = 30/2 = 15 
+async function tinhDienTich(a,b,h){
+    let tong = await cong(a,b) 
+    let tich = await nhan(tong,h) 
+    return await chia(tich,2) 
 }
-// tinhDienTich(2,4,5,(kq,err)=>{
-//     if(err) return;
-//     console.log(kq)
-// })
-function tinhDienTich02(a,b,h){
-    return cong(a,b)
-    .then(tong => nhan(tong,h))
-    .then(tich=>chia(tich,2))
-}
-// tinhDienTich02(4,5,6)
-// .then(result=>console.log(result))
-// .catch(e=>console.log(e))
-
- 
-
-// (2+4)*5/2 = 6*5/2 = 30/2 = 15  3s
-// (2+4)*5/2 = 6*2.5 = 15         2s
-
-Promise.all([cong(2,4),chia(5,2)])
-.then(result => nhan(result[0],result[1]))
-.then(kq => console.log(kq))
+tinhDienTich(2,4,5)
+.then(r=>console.log(r))
+.catch(e=>console.log(e.message))
