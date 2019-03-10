@@ -2,7 +2,7 @@ const URL = 'http://localhost:3000/';
 const request = require('request')
 
 
-function cong(a,b,fn){
+function cong(a,b,fn){ //1s + 100
     // http://localhost:3000/3/cong/4
     if(isNaN(a) || isNaN(b)) return fn(null,new Error('Invalid parameters'))
     
